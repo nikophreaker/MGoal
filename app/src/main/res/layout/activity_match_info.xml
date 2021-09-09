@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/match_bet_layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff162750"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="46.0dip">
+
+        <include layout="@layout/include_match_list_top_layout" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@id/match_bet_btn_rank"
+                android:layout_width="55.5dip"
+                android:layout_height="47.0dip"
+                android:paddingStart="15.0dip"
+                android:paddingTop="10.0dip"
+                android:paddingEnd="15.0dip"
+                android:paddingBottom="10.0dip"
+                android:src="@mipmap/match_bet_icon_rank" />
+
+            <ImageView
+                android:id="@id/match_bet_btn_share"
+                android:layout_width="55.5dip"
+                android:layout_height="47.0dip"
+                android:paddingStart="15.0dip"
+                android:paddingTop="10.0dip"
+                android:paddingEnd="15.0dip"
+                android:paddingBottom="10.0dip"
+                android:src="@mipmap/match_bet_icon_share" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout
+            android:id="@id/match_bet_layout_coordinator"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@id/match_bet_app_bar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        app:contentInsetLeft="0.0dip"
+                        app:contentInsetStart="0.0dip"
+                        app:layout_collapseMode="pin">
+
+                        <include layout="@layout/include_match_info_tool_close" />
+                    </androidx.appcompat.widget.Toolbar>
+
+                    <include layout="@layout/include_match_info_tool_open" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <include layout="@layout/include_match_bet_tab" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <FrameLayout
+                android:id="@id/match_bet_layout_frame"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="#ff172e67"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+        </com.google.android.material.circularreveal.coordinatorlayout.CircularRevealCoordinatorLayout>
+
+        <include layout="@layout/include_request_state" />
+
+        <RelativeLayout
+            android:id="@id/match_bet_guide"
+            android:layout_width="178.0dip"
+            android:layout_height="75.0dip"
+            android:layout_marginStart="15.0dip"
+            android:layout_marginTop="500.0dip" />
+
+        <RelativeLayout
+            android:id="@id/match_bet_guide_record"
+            android:layout_width="fill_parent"
+            android:layout_height="200.0dip"
+            android:layout_marginStart="5.0dip"
+            android:layout_marginTop="430.0dip" />
+    </RelativeLayout>
+</LinearLayout>

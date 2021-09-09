@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res"
+    android:id="@id/match_bet_tool_open"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip"
+        android:background="#ff0e1d3f"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@id/match_info_bonus_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15.0dip">
+
+            <ImageView
+                android:id="@id/match_info_i_bonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/match_top_icon_coin" />
+
+            <TextView
+                android:id="@id/match_info_bonus_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10.0dip"
+                android:background="@drawable/shape_d3321b_radius_40dp"
+                android:gravity="center"
+                android:paddingStart="5.0dip"
+                android:paddingTop="2.0dip"
+                android:paddingEnd="5.0dip"
+                android:paddingBottom="2.0dip"
+                android:text="+1%"
+                android:textColor="#fffffffd"
+                android:textSize="10.0sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@id/match_bet_jackpot_layout"
+            android:layout_width="102.0dip"
+            android:layout_height="28.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="25.0dip"
+            android:layout_toEndOf="@id/match_info_bonus_layout"
+            android:background="@mipmap/img_score_jackpot_bg"
+            android:orientation="horizontal"
+            android:paddingTop="10.0dip" />
+
+        <LinearLayout
+            android:id="@id/match_info_layout_info"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingStart="15.0dip"
+            android:paddingEnd="15.0dip">
+
+            <ImageView
+                android:id="@id/match_info_i_info"
+                android:layout_width="25.0dip"
+                android:layout_height="25.0dip"
+                android:layout_gravity="center_vertical"
+                android:src="@mipmap/match_bet_icon_info" />
+
+            <TextView
+                android:id="@id/match_info_t_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="6.0dip"
+                android:text="@string/match_info"
+                android:textColor="#ff0eeceb"
+                android:textSize="14.0sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+<!--    <com.tcm.gogoal.ui.views.MGoalLogoLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="25.0dip"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:logo_num="3" />-->
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="260.0dip">
+
+        <RelativeLayout
+            android:id="@id/match_bet_state_layout_nor"
+            android:layout_width="fill_parent"
+            android:layout_height="260.0dip"
+            android:background="@mipmap/match_info_top_wait_bg"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="260.0dip"
+                android:paddingStart="15.0dip"
+                android:paddingEnd="15.0dip">
+
+                <ImageView
+                    android:id="@id/match_bet_iv_host_icon"
+                    android:layout_width="120.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/host_defa_icon" />
+
+                <TextView
+                    android:id="@id/match_bet_tv_host_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/match_bet_iv_host_icon"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10.0dip"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    android:textSize="21.0sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="VS"
+                    android:textColor="@color/white"
+                    android:textSize="36.0sp" />
+
+                <ImageView
+                    android:id="@id/match_bet_iv_guest_icon"
+                    android:layout_width="120.0dip"
+                    android:layout_height="120.0dip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/guest_defa_icon" />
+
+                <TextView
+                    android:id="@id/match_bet_tv_guest_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/match_bet_iv_guest_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10.0dip"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/white"
+                    android:textSize="21.0sp" />
+
+                <TextView
+                    android:id="@id/match_bet_tv_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30.0dip"
+                    android:textColor="@color/white"
+                    android:textSize="26.0sp"
+                    app:boder_color="@color/font_color_080e1d"
+                    app:boder_width="2.0dip" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/match_bet_state_layout_ing"
+            android:layout_width="fill_parent"
+            android:layout_height="260.0dip"
+            android:background="@mipmap/img_score_animation_court"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@id/match_bet_layout_event_left"
+                android:layout_width="200.0dip"
+                android:layout_height="30.0dip"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@id/match_bet_tv_event_left"
+                    android:layout_width="fill_parent"
+                    android:layout_height="28.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/score_cace_event_bg_host"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/match_bet_layout_event_right"
+                android:layout_width="200.0dip"
+                android:layout_height="30.0dip"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@id/match_bet_tv_event_right"
+                    android:layout_width="fill_parent"
+                    android:layout_height="28.0dip"
+                    android:layout_centerVertical="true"
+                    android:background="@mipmap/score_cace_event_bg_guest"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="18.0sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@id/match_bet_case_anim_bg"
+                android:layout_width="fill_parent"
+                android:layout_height="180.0dip"
+                android:background="#90000000"
+                android:visibility="gone" />
+
+<!--            <com.tcm.scoreGame.ui.view.MatchCaseAnimationView-->
+<!--                android:id="@id/match_bet_case_anim_view"-->
+<!--                android:layout_width="535.0dip"-->
+<!--                android:layout_height="162.0dip"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="20.0dip"-->
+<!--                android:background="#00000000" />-->
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="80.0dip"
+                android:layout_alignParentBottom="true"
+                android:paddingStart="14.0dip"
+                android:paddingEnd="14.0dip">
+
+                <ImageView
+                    android:id="@id/match_bet_iv_host_icon_3"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/host_defa_icon" />
+
+                <TextView
+                    android:id="@id/match_bet_tv_host_name_3"
+                    android:layout_width="170.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5.0dip"
+                    android:layout_toEndOf="@id/match_bet_iv_host_icon_3"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:text="host"
+                    android:textColor="@color/white"
+                    android:textSize="18.0sp" />
+
+                <RelativeLayout
+                    android:id="@id/match_bet_layout_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8.0dip">
+
+                    <ImageView
+                        android:id="@id/match_bet_i_timer2"
+                        android:layout_width="16.0dip"
+                        android:layout_height="19.0dip"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/img_score_qiuchang_timer_small" />
+
+                    <TextView
+                        android:id="@id/match_bet_tv_timer3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="3.0dip"
+                        android:layout_toEndOf="@id/match_bet_i_timer2"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="18.0sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@id/match_info_tv_date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/match_bet_layout_timer"
+                    android:layout_centerHorizontal="true"
+                    android:background="#66080e1d"
+                    android:paddingStart="9.0dip"
+                    android:paddingEnd="9.0dip"
+                    android:text="0:0"
+                    android:textColor="@color/white"
+                    android:textSize="30.0sp" />
+
+                <ImageView
+                    android:id="@id/match_bet_iv_guest_icon_3"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@mipmap/host_defa_icon" />
+
+                <TextView
+                    android:id="@id/match_bet_tv_guest_name_3"
+                    android:layout_width="170.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5.0dip"
+                    android:layout_toStartOf="@id/match_bet_iv_guest_icon_3"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:maxLines="2"
+                    android:text="host"
+                    android:textColor="@color/white"
+                    android:textSize="18.0sp" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+<!--    <com.tcm.gogoal.ui.views.MGoalLogoLayout-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="25.0dip"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:logo_num="3"-->
+<!--        app:orientation="180.0" />-->
+</LinearLayout>

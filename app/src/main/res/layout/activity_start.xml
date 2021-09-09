@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout_root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff162750"
+    android:fitsSystemWindows="true">
+
+    <ImageView
+        android:id="@id/i_top_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="450dip"
+        android:scaleType="fitXY"
+        android:src="@mipmap/img_login_top_bg" />
+
+    <ImageView
+        android:id="@id/i_center_icon"
+        android:layout_width="fill_parent"
+        android:layout_height="423.0dip"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10.0dip"
+        android:layout_marginEnd="10.0dip"
+        android:src="@mipmap/img_login_logo" />
+
+    <ImageView
+        android:id="@id/login_iv_top_logo"
+        android:layout_width="172.0dip"
+        android:layout_height="60.0dip"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100.0dip"
+        android:src="@mipmap/img_login_mgoal" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@id/start_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="100.0dip"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@id/start_t_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/start_tips"
+            android:textColor="@color/color_749de3"
+            android:textSize="17.0sp" />
+
+        <ImageView
+            android:id="@id/i_logo_88fc"
+            android:layout_width="180.0dip"
+            android:layout_height="45.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15.0dip"
+            android:src="@mipmap/img_login_88fc" />
+
+        <TextView
+            android:id="@id/start_t_tips_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10.0dip"
+            android:text="@string/start_tips2"
+            android:textColor="@color/white"
+            android:textSize="17.0sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@id/start_btn_go"
+        android:layout_width="150.0dip"
+        android:layout_height="40.0dip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40.0dip"
+        android:background="@drawable/shape_412687_radius_5dp"
+        android:gravity="center"
+        android:text="Go"
+        android:textColor="@color/white"
+        android:textSize="17.0dip"
+        android:visibility="gone" />
+
+    <include layout="@layout/include_version_update" />
+
+    <RelativeLayout
+        android:id="@id/start_banner_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" />
+</RelativeLayout>

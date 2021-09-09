@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toEndOf="@id/match_bet_btn_back"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@id/match_bet_layout_coin"
+        android:layout_width="134.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginStart="14.0dip"
+        android:layout_marginTop="30.0dip"
+        android:background="@mipmap/top_coin_bg"
+        android:orientation="horizontal"
+        android:paddingStart="10.0dip"
+        android:paddingEnd="10.0dip">
+
+        <ImageView
+            android:id="@id/match_btn_i_coin"
+            android:layout_width="22.0dip"
+            android:layout_height="20.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/match_top_icon_coin" />
+
+        <TextView
+            android:id="@id/match_bet_tv_coin"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="6.0dip"
+            android:layout_weight="1.0"
+            android:text="0"
+            android:textColor="#ffb3b1ff"
+            android:textSize="15.0dip" />
+
+        <ImageView
+            android:id="@id/match_btn_i_add1"
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/top_icon_add" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@id/match_bet_layout_diamond"
+        android:layout_width="114.0dip"
+        android:layout_height="30.0dip"
+        android:layout_marginStart="10.0dip"
+        android:layout_marginTop="30.0dip"
+        android:background="@mipmap/top_coin_bg"
+        android:orientation="horizontal"
+        android:paddingStart="10.0dip"
+        android:paddingEnd="10.0dip">
+
+        <ImageView
+            android:id="@id/match_btn_i_diamond"
+            android:layout_width="22.0dip"
+            android:layout_height="20.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/match_top_icon_diamond" />
+
+        <TextView
+            android:id="@id/match_bet_tv_diamond"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="6.0dip"
+            android:layout_weight="1.0"
+            android:text="0"
+            android:textColor="#ffb3b1ff"
+            android:textSize="15.0dip" />
+
+        <ImageView
+            android:id="@id/match_btn_i_add2"
+            android:layout_width="15.0dip"
+            android:layout_height="15.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/top_icon_add" />
+    </LinearLayout>
+</LinearLayout>

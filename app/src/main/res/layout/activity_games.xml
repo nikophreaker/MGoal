@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:background="@color/status_bar">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="25.0dip"
+            android:layout_marginStart="10.0dip"
+            android:layout_marginTop="10.0dip"
+            android:src="@mipmap/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35.0dip"
+            android:layout_marginTop="7.0dip"
+            android:layout_toEndOf="@id/back"
+            android:text="@string/mgoal_games"
+            android:textColor="@color/white"
+            android:textSize="24.0sp" />
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/game_canva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar" />
+
+
+</RelativeLayout>

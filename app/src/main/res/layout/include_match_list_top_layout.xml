@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@id/transaction_btn_back"
+        android:layout_width="30.0dip"
+        android:layout_height="45.0dip"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="10.0dip"
+        android:paddingStart="11.0dip"
+        android:paddingTop="7.0dip"
+        android:paddingEnd="11.0dip"
+        android:paddingBottom="7.0dip"
+        android:src="@mipmap/icon_back" />
+
+    <LinearLayout
+        android:id="@id/match_list_layout_coin"
+        android:layout_width="200.0dip"
+        android:layout_height="30.0dip"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="14.0dip"
+        android:layout_toEndOf="@id/transaction_btn_back"
+        android:background="@drawable/shape_0e1d3f_radius_5dp"
+        android:orientation="horizontal"
+        android:paddingStart="10.0dip"
+        android:paddingEnd="10.0dip">
+
+        <ImageView
+            android:id="@id/world_cup_iv_coin"
+            android:layout_width="23.0dip"
+            android:layout_height="23.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/match_top_icon_coin" />
+
+        <TextView
+            android:id="@id/match_list_tv_coin"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="6.0dip"
+            android:layout_weight="1.0"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="12.0sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@id/world_cup_i_add"
+            android:layout_width="23.0dip"
+            android:layout_height="23.0dip"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/top_icon_add"
+            android:visibility="visible" />
+    </LinearLayout>
+</RelativeLayout>

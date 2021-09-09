@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <public type="attr" name="boder_color" id="0x7f040057" />
+    <public type="attr" name="boder_width" id="0x7f040058" />
+    <public type="attr" name="borderWidth" id="0x7f040059" />
+</resources>

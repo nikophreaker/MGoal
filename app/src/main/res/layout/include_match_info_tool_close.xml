@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/match_bet_tool_close"
+    android:layout_width="fill_parent"
+    android:layout_height="80.0dip"
+    android:background="@drawable/shape_00b262_width_080e1d_2dp"
+    android:paddingStart="14.0dip"
+    android:paddingEnd="14.0dip">
+
+    <ImageView
+        android:id="@id/match_bet_iv_host_icon_2"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/host_defa_icon" />
+
+    <TextView
+        android:id="@id/match_bet_tv_host_name_2"
+        android:layout_width="170.0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="5.0dip"
+        android:layout_toEndOf="@id/match_bet_iv_host_icon_2"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="host"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+
+    <RelativeLayout
+        android:id="@id/match_bet_layout_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8.0dip">
+
+        <ImageView
+            android:id="@id/match_bet_i_timer"
+            android:layout_width="16.0dip"
+            android:layout_height="19.0dip"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/img_score_qiuchang_timer_small" />
+
+        <TextView
+            android:id="@id/match_bet_tv_timer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="3.0dip"
+            android:layout_toEndOf="@id/match_bet_i_timer"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="18.0sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@id/match_info_tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/match_bet_layout_timer"
+        android:layout_centerHorizontal="true"
+        android:text="0:0"
+        android:textColor="@color/white"
+        android:textSize="30.0sp" />
+
+    <ImageView
+        android:id="@id/match_bet_iv_guest_icon_2"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/guest_defa_icon" />
+
+    <TextView
+        android:id="@id/match_bet_tv_guest_name_2"
+        android:layout_width="170.0dip"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="5.0dip"
+        android:layout_toStartOf="@id/match_bet_iv_guest_icon_2"
+        android:ellipsize="end"
+        android:gravity="end"
+        android:maxLines="2"
+        android:text="host"
+        android:textColor="@color/white"
+        android:textSize="18.0sp" />
+</RelativeLayout>

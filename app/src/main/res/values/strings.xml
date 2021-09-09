@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">M Goal</string>
+    <string name="free">FREE</string>
+    <string name="home_top_ranking">RANKING</string>
+    <string name="home_top_income">Reward</string>
+    <string name="home_top_event">Events</string>
+    <string name="home_top_event_new">New</string>
+    <string name="home_top_cash_out">Redeem Gifts</string>
+    <string name="start_tips">PRESENTED BY</string>
+    <string name="start_tips2">PORTAL OLAHRAGA TERKINI</string>
+    <string name="login_guest">Guest</string>
+    <string name="request_loading">Loading</string>
+    <string name="login_phone">Login</string>
+    <string name="login_email">Email</string>
+    <string name="guide_login_tips">Redeem Cash into Gifts and Vouchers</string>
+    <string name="invite_reward_tips_tourist">Login and claim up to $%s cash</string>
+    <string name="request_btn_retry">Retry</string>
+    <string name="request_data_empty">No information</string>
+    <string name="request_data_page_error">Network connection failed</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="user_info_title">My Account</string>
+    <string name="view">View</string>
+    <string name="my_level_title">Account Level</string>
+    <string name="match_bet_tab_hot_events">Hot</string>
+    <string name="match_bet_tab_score">Score</string>
+    <string name="match_bet_tab_5m_goal">5M Goal</string>
+    <string name="match_info">Match Info</string>
+    <string name="login_email_create_account">Create New M Goal Account</string>
+    <string name="login_forgot_psw">Forgot Password</string>
+    <string name="btn_login">Login</string>
+    <string name="login_email_hint_psw">Password</string>
+    <string name="login_email_hint_email">Enter your email</string>
+    <string name="login_tips_welcome">Welcome!</string>
+    <string name="facebook_app_id">867204220575416</string>
+    <string name="fb_login_protocol_scheme">fb867204220575416</string>
+    <string name="mgoal_games">MGoal Games</string>
+    <string name="match_list_screen_determine">Confirm</string>
+    <string name="match_list_screen_top_five">Top Five</string>
+    <string name="match_list_screen_reverse">Reverse</string>
+    <string name="match_list_screen_all">All</string>
+    <string name="match_list_screen_hint">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
