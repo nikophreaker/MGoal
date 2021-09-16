@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app2="http://schemas.android.com/apk/res"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ff172e67"
     tools:context=".funmatch.PlayFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textColor="@color/white"
-        android:text="In-Play" />
+    <data>
 
-</FrameLayout>
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.providoindodigital.mgoal.funmatch.MatchViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/fragments_all">
+
+        <ImageView
+            android:id="@+id/task_icon"
+            android:layout_width="100dip"
+            android:layout_height="100dip"
+            android:layout_above="@id/text1"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/no_match_inplay"
+            android:visibility="@{viewModel.matchDataList.size() == 0 ? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dip"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:text="@string/no_in_play_matches_currently"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:gravity="center"
+            android:text="@string/plz_enjoy_super_cup_24_7"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/goto_cup"
+            android:layout_width="fill_parent"
+            android:layout_height="60.0dip"
+            android:layout_below="@id/text2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginStart="64.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginEnd="64.0dip"
+            android:background="@mipmap/btn_blue"
+            android:onClick="onClick"
+            android:paddingBottom="5.0dip"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/go"
+                android:textColor="@color/white"
+                android:textSize="16.0sp"
+                app2:boder_color="@color/font_color_080e1d"
+                app2:boder_width="1.5dip" />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMatch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/fragments_all"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:matchList="@{viewModel.matchDataList}" />
+
+    </RelativeLayout>
+</layout>

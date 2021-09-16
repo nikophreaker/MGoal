@@ -3,10 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/drawable/shape_match_option_bg_middle_nor.xml" value="0.14358108108108109" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/drawable/shape_match_option_bg_nor.xml" value="0.16122913505311076" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/drawable/shape_match_option_bg_sel.xml" value="0.14358108108108109" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/font/font.xml" value="0.39076923076923076" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_login.xml" value="0.1308550185873606" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_login_email.xml" value="0.33" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_main.xml" value="0.1331081081081081" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_match_info.xml" value="0.2" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_match_list.xml" value="0.25" />
         <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/activity_my.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/dialog_match_bet.xml" value="0.23783783783783785" />
         <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/fragment_all.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/fragment_my_games.xml" value="0.11678832116788321" />
         <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/fragment_play.xml" value="0.17831813576494426" />
-        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/item_match.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/include_match_info_tool_open.xml" value="0.25" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/include_match_list_top_layout.xml" value="0.33" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/item_match(backup).xml" value="0.26707132018209406" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/item_match.xml" value="0.33" />
+        <entry key="..\:/Users/IT1/AndroidStudioProjects/MGoal/app/src/main/res/layout/item_match_backup.xml" value="0.14946889226100152" />
       </map>
     </option>
   </component>

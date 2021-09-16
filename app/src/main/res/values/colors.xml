@@ -15,4 +15,6 @@
     <color name="status_bar">#ff25314B</color>
     <color name="status_bar2">#ff162750</color>
     <color name="status_bar3">#ff252D44</color>
+    <color name="fragments_all">#ff182E67</color>
+    <color name="full_transparent">#00000000</color>
 </resources>

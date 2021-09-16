@@ -6,13 +6,13 @@ import com.providoindodigital.mgoal.data.source.MainDataSource
 
 class MainDataLocalSource  private constructor(private val preferences: SharedPreferences) :
     MainDataSource {
+//    override fun getTokenData(callback: MainDataSource.GetTokenCallback) {
+//
+//    }
+
     override fun getMatchData(callback: MainDataSource.GetMatchDataCallback) {
 
     }
-
-//    override fun getMainData(callback: MainDataSource.GetMainDataCallback) {
-//
-//    }
 
     companion object {
         private var INSTANCE: MainDataLocalSource? = null

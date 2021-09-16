@@ -42,6 +42,8 @@
         </activity>
         <activity android:name=".ui.base.MatchListActivity"
             android:parentActivityName=".ui.base.MainActivity"/>
+        <activity android:name=".ui.base.MatchInfoActivity"
+            android:parentActivityName=".ui.base.MatchListActivity"/>
     </application>
 
 </manifest>

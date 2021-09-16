@@ -10,6 +10,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.providoindodigital.mgoal.databinding.ActivityMyBinding
+import com.providoindodigital.mgoal.utils.SessionManagerUtil
 import com.scwang.smart.refresh.header.ClassicsHeader
 
 class MyActivity : AppCompatActivity() {
@@ -36,15 +37,12 @@ class MyActivity : AppCompatActivity() {
         }
 
         binding.myRefreshLayout.setRefreshHeader(ClassicsHeader(this))
-//        refreshLayout.setRefreshFooter(ClassicsFooter(this))
         binding.myRefreshLayout.setOnRefreshListener { refreshlayout ->
             refreshlayout.finishRefresh(2000 /*,false*/) //传入false表示刷新失败
         }
-//        refreshLayout.setOnLoadMoreListener { refreshlayout ->
-//            refreshlayout.finishLoadMore(2000 /*,false*/) //传入false表示加载失败
-//        }
         binding.ivSetting.setOnClickListener {
             if (isLoggedIn()) {
+                SessionManagerUtil.endUserSession(this)
                 LoginManager.getInstance().logOut()
                 val intent = Intent(
                     this,
@@ -54,6 +52,7 @@ class MyActivity : AppCompatActivity() {
                 finish()
             } else {
                 signOut()
+                SessionManagerUtil.endUserSession(this)
             }
         }
         binding.btnBack.setOnClickListener {
@@ -77,16 +76,6 @@ class MyActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
-
-//    private fun signOut() {
-//        mGoogleSignInClient!!.signOut()
-//            .addOnCompleteListener(this) {
-//                // Update your UI here
-//                val i = Intent(this@MyActivity,LoginActivity::class.java).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-//                startActivity(i)
-//                finish()
-//            }
-//    }
 
     private fun revokeAccess() {
         mGoogleSignInClient!!.revokeAccess()

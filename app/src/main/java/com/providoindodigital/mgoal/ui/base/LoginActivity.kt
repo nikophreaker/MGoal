@@ -17,6 +17,7 @@ import com.facebook.login.LoginManager
 import com.facebook.login.LoginResult
 import com.providoindodigital.mgoal.BuildConfig
 import com.providoindodigital.mgoal.databinding.ActivityLoginBinding
+import com.providoindodigital.mgoal.utils.SessionManagerUtil
 import java.util.*
 
 class LoginActivity : AppCompatActivity() {
@@ -33,7 +34,11 @@ class LoginActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        if (isLoggedIn()) {
+        val currentTime = Calendar.getInstance().time
+
+        val sessionIsActive = SessionManagerUtil.isSessionActive(currentTime, this)
+
+        if (isLoggedIn() || sessionIsActive) {
             val myIntent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(myIntent)
             finish()
@@ -62,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("TAG", "Success Login")
                 // Get User's Info
                 getUserProfile(loginResult?.accessToken, loginResult?.accessToken?.userId)
-                val myIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                val myIntent = Intent(this@LoginActivity, MainActivity::class.java).putExtra("fb_id", loginResult?.accessToken?.userId)
                 startActivity(myIntent)
                 finish()
             }

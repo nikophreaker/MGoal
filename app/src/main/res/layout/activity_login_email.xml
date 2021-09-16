@@ -1,184 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res"
-    android:id="@id/login_main"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#ff162750">
+<layout>
 
-    <ImageView
-        android:id="@id/login_btn_back"
-        android:layout_width="50.0dip"
-        android:layout_height="50.0dip"
-        android:layout_marginStart="5.0dip"
-        android:layout_marginTop="20.0dip"
-        android:padding="15.0dip"
-        android:src="@mipmap/icon_back" />
+    <data>
 
-    <ImageView
-        android:id="@id/login_iv_logo"
-        android:layout_width="172.0dip"
-        android:layout_height="60.0dip"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="110.0dip"
-        android:src="@mipmap/img_login_mgoal" />
+        <import type="android.view.View" />
 
-    <TextView
-        android:id="@id/login_tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_iv_logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23.0dip"
-        android:text="@string/login_tips_welcome"
-        android:textColor="@color/white"
-        android:textSize="20.0sp"
-        app:boder_color="@color/font_color_080e1d"
-        app:boder_width="1.5dip" />
+        <variable
+            name="viewModel"
+            type="com.providoindodigital.mgoal.auth.AuthViewModel" />
 
-    <RelativeLayout
-        android:id="@id/login_layout_main"
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res"
+        android:id="@id/login_main"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/login_tv_title"
-        android:layout_marginTop="85.0dip"
-        android:orientation="vertical">
+        android:layout_height="fill_parent"
+        android:background="#ff162750">
 
-        <LinearLayout
-            android:id="@id/ll_select_email"
-            android:layout_width="fill_parent"
-            android:layout_height="40.0dip"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="60.0dip"
-            android:layout_marginTop="25.0dip"
-            android:layout_marginEnd="60.0dip"
-            android:background="@mipmap/img_edit_bg_nor">
-
-            <ImageView
-                android:id="@id/iv_email"
-                android:layout_width="20.0dip"
-                android:layout_height="20.0dip"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15.0dip"
-                android:src="@mipmap/login_email_nor" />
-
-            <EditText
-                android:id="@id/edt_email"
-                android:layout_width="0.0dip"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15.0dip"
-                android:layout_marginEnd="15.0dip"
-                android:layout_weight="1.0"
-                android:background="@null"
-                android:hint="@string/login_email_hint_email"
-                android:singleLine="true"
-                android:textColor="@color/font_color_080e1d"
-                android:textColorHint="#ffbcc3cf"
-                android:textSize="16.0sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@id/ll_select_psw"
-            android:layout_width="fill_parent"
-            android:layout_height="40.0dip"
-            android:layout_below="@id/ll_select_email"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginStart="60.0dip"
-            android:layout_marginTop="20.0dip"
-            android:layout_marginEnd="60.0dip"
-            android:background="@mipmap/img_edit_bg_nor">
-
-            <ImageView
-                android:id="@id/login_iv_psw"
-                android:layout_width="20.0dip"
-                android:layout_height="20.0dip"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15.0dip"
-                android:src="@mipmap/login_psw_nor" />
-
-            <EditText
-                android:id="@id/login_edt_psw"
-                android:layout_width="0.0dip"
-                android:layout_height="fill_parent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15.0dip"
-                android:layout_weight="1.0"
-                android:background="@null"
-                android:hint="@string/login_email_hint_psw"
-                android:inputType="textPassword"
-                android:maxLength="30"
-                android:maxLines="1"
-                android:textColor="@color/font_color_080e1d"
-                android:textColorHint="#ffbcc3cf"
-                android:textSize="16.0sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@id/login_hide_btn"
-                android:layout_width="40.0dip"
-                android:layout_height="40.0dip"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15.0dip"
-                android:layout_marginEnd="5.0dip"
-                android:padding="10.0dip"
-                android:onClick="ShowHidePass"
-                android:src="@mipmap/icon_show" />
-        </LinearLayout>
-
-        <TextView
-            android:id="@id/login_tv_login"
-            style="@style/BtnBlue"
-            android:layout_width="fill_parent"
+        <ImageView
+            android:id="@id/login_btn_back"
+            android:layout_width="50.0dip"
             android:layout_height="50.0dip"
-            android:layout_below="@id/ll_select_psw"
-            android:layout_marginStart="60.0dip"
-            android:layout_marginTop="30.0dip"
-            android:layout_marginEnd="60.0dip"
-            android:text="@string/btn_login"
-            android:textSize="16.0sp"/>
+            android:layout_marginStart="5.0dip"
+            android:layout_marginTop="20.0dip"
+            android:padding="15.0dip"
+            android:src="@mipmap/icon_back" />
+
+        <ImageView
+            android:id="@id/login_iv_logo"
+            android:layout_width="172.0dip"
+            android:layout_height="60.0dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110.0dip"
+            android:src="@mipmap/img_login_mgoal" />
 
         <TextView
-            android:id="@id/login_forgot_psw"
+            android:id="@id/login_tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/login_tv_login"
-            android:layout_alignStart="@id/login_tv_login"
-            android:layout_marginTop="15.0dip"
-            android:text="@string/login_forgot_psw"
-            android:textColor="@color/font_color_749de3"
+            android:layout_below="@id/login_iv_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="23.0dip"
+            android:text="@string/login_tips_welcome"
+            android:textColor="@color/white"
+            android:textSize="20.0sp"
+            app:boder_color="@color/font_color_080e1d"
+            app:boder_width="1.5dip" />
+
+        <RelativeLayout
+            android:id="@id/login_layout_main"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_tv_title"
+            android:layout_marginTop="85.0dip"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@id/ll_select_email"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="60.0dip"
+                android:layout_marginTop="25.0dip"
+                android:layout_marginEnd="60.0dip"
+                android:background="@mipmap/img_edit_bg_nor">
+
+                <ImageView
+                    android:id="@id/iv_email"
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.0dip"
+                    android:src="@mipmap/login_email_nor" />
+
+                <EditText
+                    android:id="@id/edt_email"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.0dip"
+                    android:layout_marginEnd="15.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@null"
+                    android:hint="@string/login_email_hint_email"
+                    android:singleLine="true"
+                    android:text="@{viewModel.email}"
+                    android:textColor="@color/font_color_080e1d"
+                    android:textColorHint="#ffbcc3cf"
+                    android:textSize="16.0sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@id/ll_select_psw"
+                android:layout_width="fill_parent"
+                android:layout_height="40.0dip"
+                android:layout_below="@id/ll_select_email"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="60.0dip"
+                android:layout_marginTop="20.0dip"
+                android:layout_marginEnd="60.0dip"
+                android:background="@mipmap/img_edit_bg_nor">
+
+                <ImageView
+                    android:id="@id/login_iv_psw"
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.0dip"
+                    android:src="@mipmap/login_psw_nor" />
+
+                <EditText
+                    android:id="@id/login_edt_psw"
+                    android:layout_width="0.0dip"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.0dip"
+                    android:layout_weight="1.0"
+                    android:background="@null"
+                    android:hint="@string/login_email_hint_psw"
+                    android:inputType="textPassword"
+                    android:maxLength="30"
+                    android:maxLines="1"
+                    android:text="@{viewModel.password}"
+                    android:textColor="@color/font_color_080e1d"
+                    android:textColorHint="#ffbcc3cf"
+                    android:textSize="16.0sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@id/login_hide_btn"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15.0dip"
+                    android:layout_marginEnd="5.0dip"
+                    android:onClick="ShowHidePass"
+                    android:padding="10.0dip"
+                    android:src="@mipmap/icon_show" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/login_tv_login"
+                style="@style/BtnBlue"
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_below="@id/ll_select_psw"
+                android:layout_marginStart="60.0dip"
+                android:layout_marginTop="30.0dip"
+                android:layout_marginEnd="60.0dip"
+                android:onClick="@{viewModel::onLoginButtonClick}"
+                android:text="@string/btn_login"
+                android:textSize="16.0sp" />
+
+            <TextView
+                android:id="@id/login_forgot_psw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_tv_login"
+                android:layout_alignStart="@id/login_tv_login"
+                android:layout_marginTop="15.0dip"
+                android:text="@string/login_forgot_psw"
+                android:textColor="@color/font_color_749de3"
+                android:textSize="16.0sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@id/login_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="25.0dip"
+            android:text="@string/login_email_create_account"
+            android:textColor="#ff36ff73"
             android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@id/login_tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="60.0dip"
+            android:layout_above="@id/login_create_account"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/treasure_tips_bg"
+            android:gravity="center"
+            android:paddingStart="30.0dip"
+            android:paddingEnd="30.0dip"
+            android:paddingBottom="10.0dip"
+            android:text="@string/invite_reward_tips_tourist"
+            android:textColor="@color/font_color_080e1d"
+            android:textSize="14.0sp"
+            android:visibility="gone" />
+
+        <include layout="@layout/include_request_state" />
     </RelativeLayout>
-
-    <TextView
-        android:id="@id/login_create_account"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25.0dip"
-        android:text="@string/login_email_create_account"
-        android:textColor="#ff36ff73"
-        android:textSize="16.0sp" />
-
-    <TextView
-        android:id="@id/login_tv_tips"
-        android:layout_width="wrap_content"
-        android:layout_height="60.0dip"
-        android:layout_above="@id/login_create_account"
-        android:layout_centerHorizontal="true"
-        android:background="@mipmap/treasure_tips_bg"
-        android:gravity="center"
-        android:paddingStart="30.0dip"
-        android:paddingEnd="30.0dip"
-        android:paddingBottom="10.0dip"
-        android:text="@string/invite_reward_tips_tourist"
-        android:textColor="@color/font_color_080e1d"
-        android:textSize="14.0sp"
-        android:visibility="gone" />
-
-    <include layout="@layout/include_request_state" />
-</RelativeLayout>
+</layout>

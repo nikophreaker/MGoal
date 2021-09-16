@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+
+        <variable
+            name="vm"
+            type="com.providoindodigital.mgoal.funmatch.MatchViewModel" />
+
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res"
     android:id="@id/match_bet_tool_open"
@@ -320,3 +328,4 @@
 <!--        app:logo_num="3"-->
 <!--        app:orientation="180.0" />-->
 </LinearLayout>
+</layout>

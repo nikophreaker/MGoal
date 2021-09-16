@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@id/layout_top"
         android:layout_width="fill_parent"
-        android:layout_height="132.0dip"
+        android:layout_height="90.0dip"
         android:orientation="vertical">
 
         <include
@@ -21,40 +21,49 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="58.0dip"
+            android:layout_height="40.0dip"
             android:orientation="horizontal">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@id/match_list_sliding_tab"
                 android:layout_width="0dip"
-                android:layout_height="wrap_content"
+                android:layout_height="40dip"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1.0"
-                appauto:tabMode="fixed"
-                appauto:tabIndicatorGravity="bottom"
-                appauto:tabTextColor="@color/white"
-                appauto:tabSelectedTextColor="@color/white"
-                appauto:tabIndicatorAnimationMode="elastic"
                 appauto:tabIndicator="@mipmap/transaction_top_txt_line"
-                appauto:tabIndicatorColor="@color/white"/>
+                appauto:tabIndicatorAnimationMode="elastic"
+                appauto:tabIndicatorColor="@color/white"
+                appauto:tabIndicatorGravity="bottom"
+                appauto:tabMode="fixed"
+                appauto:tabSelectedTextColor="@color/white"
+                appauto:tabTextColor="@color/white"
+                appauto:tabIndicatorHeight="2dip"
+                appauto:tabGravity="fill"
+                style="@style/MyCustomTabLayout"/>
+
+            <ImageView
+                android:layout_width="100.0dip"
+                android:layout_height="48.0dip"
+                android:layout_gravity="center_vertical"
+                android:padding="12.0dip" />
 
             <ImageView
                 android:id="@id/match_list_btn_screen"
-                android:layout_width="54.0dip"
-                android:layout_height="58.0dip"
+                android:layout_width="44.0dip"
+                android:layout_height="48.0dip"
                 android:layout_gravity="center_vertical"
-                android:padding="14.0dip"
+                android:padding="12.0dip"
                 android:src="@mipmap/match_list_icon_screening_nor" />
         </LinearLayout>
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="2.0dip"
+            android:layout_height="1.5dip"
             android:background="#ff080e1d" />
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="4.0dip"
+            android:layout_height="2.0dip"
             android:background="#ff122451" />
     </LinearLayout>
 

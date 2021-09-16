@@ -7,6 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.providoindodigital.mgoal.databinding.FragmentAllBinding
 import com.providoindodigital.mgoal.ui.base.MatchListActivity
+import android.R
+import android.app.Dialog
+import android.graphics.Color
+
+import android.graphics.drawable.ColorDrawable
+import android.view.Window
+
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
@@ -21,8 +28,8 @@ class AllFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        viewBinding = FragmentAllBinding.inflate(inflater, container,false).apply {
-            vm = (activity as MatchListActivity).obtainViewModel()
+        viewBinding = FragmentAllBinding.inflate(inflater, container, false).apply {
+            viewModel = (activity as MatchListActivity).obtainViewModel()
         }
         return viewBinding.root
     }
@@ -30,12 +37,12 @@ class AllFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        setupRepo()
+        setupMatch()
     }
 
-    private fun setupRepo() {
-        val viewModel = viewBinding.vm
-        if(viewModel != null){
+    private fun setupMatch() {
+        val viewModel = viewBinding.viewModel
+        if (viewModel != null) {
             matchAdapter = MatchAdapter(viewModel.matchDataList, viewModel)
             viewBinding.rvMatch.adapter = matchAdapter
         }
@@ -43,8 +50,7 @@ class AllFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        viewBinding.vm?.start()
-
+        viewBinding.viewModel?.start()
     }
 
     companion object {

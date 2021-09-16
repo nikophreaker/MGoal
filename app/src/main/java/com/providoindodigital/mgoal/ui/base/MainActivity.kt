@@ -13,16 +13,22 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.providoindodigital.mgoal.databinding.ActivityMainBinding
+import com.providoindodigital.mgoal.utils.obtainViewModel
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var mGoogleSignInClient : GoogleSignInClient? = null
+    private var fb_id: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        val i: Intent = intent
+        var fb_id: String? = i.getStringExtra("fb_id")
+
 
         binding.mainIvAvatar.setOnClickListener {
             val i = Intent(this, MyActivity::class.java)

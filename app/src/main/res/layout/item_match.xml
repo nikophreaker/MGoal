@@ -1,5 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".funmatch.AllFragment">
 
     <data>
 
@@ -13,192 +16,411 @@
             name="datas"
             type="com.providoindodigital.mgoal.data.MatchData" />
 
+        <variable
+            name="displayIt"
+            type="Boolean" />
+
     </data>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_kamar"
-        android:layout_width="match_parent"
-        android:layout_height="150dip"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="4dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:onClick="@{()->action.onMatchClicked()}"
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="8dp">
+        android:paddingTop="10.0dip"
+        android:paddingBottom="10.0dip">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/shape_314060_radius_10dp_width_2dp">
+        <LinearLayout
+            android:id="@id/item_match_list_left_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginEnd="5.0dip"
+            android:layout_marginBottom="5.0dip"
+            android:background="@drawable/shape_16407a_radius_10dp_width_080e1d_2dp"
+            android:onClick="@{()->action.onMatchClicked()}"
+            android:orientation="vertical"
+            android:paddingStart="10.0dip">
 
             <RelativeLayout
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:layout_marginTop="7.0dip">
 
                 <TextView
-                    android:id="@+id/league"
+                    android:id="@id/item_match_list_tv_league_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="3dp"
+                    android:fontFamily="@font/nunito_extra_light"
+                    android:paddingStart="@{displayIt ? @dimen/padding1 : @dimen/padding2}"
                     android:text="@{datas.leagueName}"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textColor="#ff749de3"
+                    android:textSize="12.0sp" />
 
-                <TextView
-                    android:id="@+id/time"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@id/item_match_list_option_title_layout"
+                    android:layout_width="120.0dip"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/league"
-                    android:layout_marginStart="15.0dip"
-                    android:layout_marginTop="15.0dip"
-                    android:text="@{datas.status.toString()}"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/time"
-                    android:layout_marginStart="15.0dip"
-                    android:layout_marginTop="3.0dip"
-                    android:text="12 Sept"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/league"
-                    android:layout_marginStart="95.0dip"
-                    android:layout_marginTop="15.0dip"
-                    android:text="@{datas.homeName}"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/away"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/home"
-                    android:layout_marginStart="95.0dip"
-                    android:layout_marginTop="5.0dip"
-                    android:text="@{datas.awayName}"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/jackpot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/away"
-                    android:layout_marginStart="50.0dip"
-                    android:layout_marginTop="15.0dip"
-                    android:text="JACKPOT"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/away_bet"
-                    android:layout_alignParentRight="true"
-                    android:text="Away"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/draw_bet"
-                    android:layout_toStartOf="@id/away_bet"
-                    android:text="Draw"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/home_bet"
-                    android:layout_toStartOf="@id/draw_bet"
-                    android:text="Home"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <RelativeLayout
-                    android:id="@+id/away_bet"
-                    android:layout_width="70.0dip"
-                    android:layout_height="40.0dip"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/shape_314060_radius_10dp_width_2dp">
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="0.0dip">
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@id/item_match_list_t_home"
+                        android:layout_width="0.0dip"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="2.06"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/draw_bet"
-                    android:layout_width="70.0dip"
-                    android:layout_height="40.0dip"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@id/away_bet"
-                    android:background="@drawable/shape_314060_radius_10dp_width_2dp">
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="@string/match_list_tv_home"
+                        android:textColor="@color/font_color_080e1d"
+                        android:textSize="12.0sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@id/item_match_list_t_draw"
+                        android:layout_width="0.0dip"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="2.97"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/home_bet"
-                    android:layout_width="70.0dip"
-                    android:layout_height="40.0dip"
-                    android:layout_centerVertical="true"
-                    android:layout_toStartOf="@id/draw_bet"
-                    android:background="@drawable/shape_314060_radius_10dp_width_2dp">
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="@string/match_list_tv_draw"
+                        android:textColor="@color/font_color_080e1d"
+                        android:textSize="12.0sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@id/item_match_list_t_away"
+                        android:layout_width="0.0dip"
                         android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:text="4.20"
-                        android:textColor="@color/white"
-                        android:textSize="16sp" />
-
-                </RelativeLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:text="More Markets >"
-                    android:textColor="@color/white"
-                    android:textSize="12sp" />
-
+                        android:layout_weight="1.0"
+                        android:gravity="center"
+                        android:text="@string/match_list_tv_away"
+                        android:textColor="@color/font_color_080e1d"
+                        android:textSize="12.0sp" />
+                </LinearLayout>
             </RelativeLayout>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.0dip">
+
+                <RelativeLayout
+                    android:layout_width="60.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@id/item_match_list_iv_icon_time"
+                            android:layout_width="16.0dip"
+                            android:layout_height="24.0dip"
+                            android:layout_marginStart="12.0dip"
+                            android:paddingBottom="3.0dip"
+                            android:src="@mipmap/img_score_list_timer"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_time_ing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8.0dip"
+                            android:gravity="center_vertical"
+                            android:text="10"
+                            android:textColor="#ffff6e12"
+                            android:textSize="12.0sp"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="01:00"
+                            android:textColor="#ff36ff73"
+                            android:textSize="12.0sp" />
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5.0dip"
+                            android:text="Sept 14"
+                            android:textColor="#ff749de3"
+                            android:textSize="12.0sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22.0dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_host_name"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="1.5dp"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLines="1"
+                            android:text="@{datas.awayName}"
+                            android:textColor="@color/white"
+                            android:textSize="12.0sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_host_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="20.0dip"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLines="1"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="12.0sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5.0dip"
+                        android:layout_marginEnd="22.0dip"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_guest_name"
+                            android:layout_width="0.0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1.0"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLines="1"
+                            android:text="@{datas.homeName}"
+                            android:textColor="@color/white"
+                            android:textSize="12.0sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@id/item_match_list_tv_guest_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="20.0dip"
+                            android:fontFamily="@font/poppins_medium"
+                            android:maxLines="1"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="12.0sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@id/item_match_list_layout_play_option_main"
+                    android:layout_width="125.0dip"
+                    android:layout_height="35dip"
+                    android:layout_gravity="center_vertical">
+
+                    <LinearLayout
+                        android:id="@id/item_match_list_layout_play_option"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="@drawable/shape_match_option_bg_nor"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@id/item_match_list_home_layout"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@id/item_match_list_home_tv_odds"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/poppins_medium_italic"
+                                    android:text="1.02"
+                                    android:textColor="@color/white"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@id/item_match_list_draw_layout"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:background="@drawable/shape_match_option_bg_middle_nor">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@id/item_match_list_draw_tv_odds"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/poppins_medium_italic"
+                                    android:text="1.02"
+                                    android:textColor="@color/white"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@id/item_match_list_away_layout"
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <TextView
+                                    android:id="@id/item_match_list_away_tv_odds"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:fontFamily="@font/poppins_medium_italic"
+                                    android:text="1.02"
+                                    android:textColor="@color/white"
+                                    android:textSize="12.0sp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@id/item_match_list_suspended_layout"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="2.0dip"
+                        android:background="#ff172e67"
+                        android:gravity="center"
+                        android:text="@string/match_list_tv_suspended"
+                        android:textColor="#ff4571ad"
+                        android:textSize="15.0dip"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="0.0dip">
+
+                <RelativeLayout
+                    android:id="@id/item_match_list_bonus_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@id/match_list_i_bonus_icon"
+                        android:layout_width="20.0dip"
+                        android:layout_height="32.0dip"
+                        android:src="@mipmap/match_top_icon_coin" />
+
+                    <TextView
+                        android:id="@id/item_match_list_bonus_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5.0dip"
+                        android:background="@drawable/shape_d3321b_radius_40dp"
+                        android:gravity="center"
+                        android:paddingStart="5.0dip"
+                        android:paddingTop="0.0dip"
+                        android:paddingEnd="5.0dip"
+                        android:paddingBottom="2.0dip"
+                        android:text="+15%"
+                        android:textColor="#fffffffd"
+                        android:textSize="8.0sp" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@id/item_match_list_iv_jackpot"
+                    android:layout_width="55.0dip"
+                    android:layout_height="13.0dip"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8.0dip"
+                    android:layout_toEndOf="@id/item_match_list_bonus_layout"
+                    android:src="@mipmap/match_list_iv_jackpot" />
+
+                <RelativeLayout
+                    android:id="@id/item_match_list_layout_play_name"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="13.0dip"
+                    android:layout_marginTop="8.0dip"
+                    android:layout_marginBottom="6.0dip">
+
+                    <TextView
+                        android:id="@id/item_match_list_t_more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="18.0dip"
+                        android:text="@string/match_list_tv_match_events"
+                        android:textColor="#ff749de3"
+                        android:textSize="10.0sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@id/item_match_list_iv_league"
+            android:layout_width="28.0dip"
+            android:layout_height="28.0dip"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@mipmap/match_icon_hot"
+            android:visibility="@{displayIt ? View.GONE : View.VISIBLE}" />
+
+        <TextView
+            android:id="@id/item_match_list_right_follow"
+            android:layout_width="55.0dip"
+            android:layout_height="26.0dip"
+            android:layout_alignParentEnd="true"
+            android:background="@mipmap/match_follow_bg"
+            android:gravity="center"
+            android:paddingStart="5.0dip"
+            android:paddingBottom="3.0dip"
+            android:text="@string/match_list_tv_follow"
+            android:textColor="@color/white"
+            android:textSize="13.0sp"
+            android:visibility="visible"
+            app:boder_color="@color/font_color_080e1d"
+            app:boder_width="2.0dip" />
+
+        <ImageView
+            android:id="@id/item_match_list_iv_ing"
+            android:layout_width="4.0dip"
+            android:layout_height="45.0dip"
+            android:layout_gravity="center_vertical"
+            android:visibility="visible" />
+    </RelativeLayout>
 </layout>
