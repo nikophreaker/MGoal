@@ -1,5 +1,6 @@
 package com.providoindodigital.mgoal.funmatch
 
+import android.widget.EditText
 import android.widget.SearchView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -13,6 +14,12 @@ object MatchBinding {
             replaceData(matchData)
         }
     }
+
+//    @BindingAdapter("app:getText")
+//    @JvmStatic
+//    fun getText(text: EditText) {
+//        text.text
+//    }
 
     @BindingAdapter("queryTextListener")
     @JvmStatic

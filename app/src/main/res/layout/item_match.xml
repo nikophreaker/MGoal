@@ -186,7 +186,7 @@
                             android:layout_marginStart="20.0dip"
                             android:fontFamily="@font/poppins_medium"
                             android:maxLines="1"
-                            android:text="0"
+                            android:text="@{datas.awayScore.toString()}"
                             android:textColor="@color/white"
                             android:textSize="12.0sp" />
                     </LinearLayout>
@@ -219,7 +219,7 @@
                             android:layout_marginStart="20.0dip"
                             android:fontFamily="@font/poppins_medium"
                             android:maxLines="1"
-                            android:text="0"
+                            android:text="@{datas.homeScore.toString()}"
                             android:textColor="@color/white"
                             android:textSize="12.0sp" />
                     </LinearLayout>

@@ -39,15 +39,15 @@ object SessionManagerUtil {
         tokenEditor.apply()
     }
 
-    fun storeUserEmail(context: Context, token: String) {
+    fun storeUserEmail(context: Context, email: String) {
         val emailEditor = context.getSharedPreferences(SESSION_PREFERENCES, 0).edit()
-        emailEditor.putString(SESSION_EMAIL, token)
+        emailEditor.putString(SESSION_EMAIL, email)
         emailEditor.apply()
     }
 
-    fun storeUserPwd(context: Context, token: String) {
+    fun storeUserPwd(context: Context, pwd: String) {
         val pwdEditor = context.getSharedPreferences(SESSION_PREFERENCES, 0).edit()
-        pwdEditor.putString(SESSION_PWD, token)
+        pwdEditor.putString(SESSION_PWD, pwd)
         pwdEditor.apply()
     }
 

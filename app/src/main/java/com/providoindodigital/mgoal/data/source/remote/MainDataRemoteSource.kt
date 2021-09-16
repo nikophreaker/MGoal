@@ -14,6 +14,7 @@ import com.providoindodigital.mgoal.data.source.remote.MainDataRemoteSource.apiS
 import com.providoindodigital.mgoal.ui.base.MainActivity
 import com.providoindodigital.mgoal.ui.base.MatchListActivity
 import com.providoindodigital.mgoal.utils.Constant
+import com.providoindodigital.mgoal.utils.SessionManager
 import com.providoindodigital.mgoal.utils.SessionManagerUtil
 import io.reactivex.Observable
 import io.reactivex.ObservableSource
@@ -58,37 +59,34 @@ object MainDataRemoteSource : MainDataSource {
 
     override fun getMatchData(callback: MainDataSource.GetMatchDataCallback) {
         apiService.getMatchData("Bearer $token")
-//            .flatMap{ getMatchDataResponse->
-//                if(getMatchDataResponse.msg != "success") {
-//                    fun getTokenData(email: RequestBody, password: RequestBody){
-//                        apiService.getToken(email, password)
-//                            .observeOn(AndroidSchedulers.mainThread())
-//                            .subscribeOn(Schedulers.io())
-//                            .subscribe ({
-//                                run {
-//                                    if (it.token != "") {
-//                                        val tokenData = TokenData(it.token)
-//                                        token = tokenData.token
-//                                        Log.i("xx", " ${it.token}")
-//                                        Observable.just(getMatchDataResponse)
+            .flatMap{ getMatchDataResponse->
+                if(getMatchDataResponse.msg != "success") {
+                    return@flatMap ObservableSource {
+                        apiService.getLogin(Constant.email, Constant.password)
+                            .observeOn(AndroidSchedulers.mainThread())
+                            .subscribeOn(Schedulers.io())
+                            .subscribe ({
+                                run {
+                                    if (it.token != "") {
+                                        val tokenData = TokenData(it.token)
+                                        token = tokenData.token
+                                        Log.i("xx", " ${it.token}")
+                                        Observable.just(getMatchDataResponse)
 //                                        SessionManagerUtil.startUserSession(matchListActivity.applicationContext, 1200) // starting session
 //                                        SessionManagerUtil.storeUserToken(matchListActivity.applicationContext, token.toString())
 //                                        SessionManagerUtil.storeUserEmail(matchListActivity.applicationContext, Constant.email)
 //                                        SessionManagerUtil.storeUserPwd(matchListActivity.applicationContext, Constant.password)
-//                                    } else {
-//                                        Log.e("NOT FOUND","NO DATA")
-//                                    }
-//                                }
-//                            }, {
-//                            })
-//                    }
-//                    return@flatMap ObservableSource {
-//                        getTokenData(email, password)
-//                    }
-//                } else {
-//                    return@flatMap Observable.just(getMatchDataResponse)
-//                }
-//            }
+                                    } else {
+                                        Log.e("NOT FOUND","NO DATA")
+                                    }
+                                }
+                            }, {
+                            })
+                    }
+                } else {
+                    return@flatMap Observable.just(getMatchDataResponse)
+                }
+            }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({
@@ -142,9 +140,9 @@ object MainDataRemoteSource : MainDataSource {
                                 item.temperature,
                                 item.weather
                             )
-                            //if(item.status == -1) {
+                            if(item.status == 1) {
                             matchDatas.add(matchData)
-                            //}
+                            }
 
 
                         }

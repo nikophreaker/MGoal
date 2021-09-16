@@ -46,7 +46,7 @@
             android:textColor="@color/white"
             android:textSize="20.0sp"
             app:boder_color="@color/font_color_080e1d"
-            app:boder_width="1.5dip" />
+            app:boder_width="1.5dip"/>
 
         <RelativeLayout
             android:id="@id/login_layout_main"
@@ -86,11 +86,11 @@
                     android:background="@null"
                     android:hint="@string/login_email_hint_email"
                     android:singleLine="true"
-                    android:text="@{viewModel.email}"
+                    android:text="@={viewModel.email}"
                     android:textColor="@color/font_color_080e1d"
                     android:textColorHint="#ffbcc3cf"
                     android:textSize="16.0sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </LinearLayout>
 
             <LinearLayout
@@ -125,11 +125,11 @@
                     android:inputType="textPassword"
                     android:maxLength="30"
                     android:maxLines="1"
-                    android:text="@{viewModel.password}"
+                    android:text="@={viewModel.password}"
                     android:textColor="@color/font_color_080e1d"
                     android:textColorHint="#ffbcc3cf"
                     android:textSize="16.0sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <ImageView
                     android:id="@id/login_hide_btn"
